@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="styles/style.css">
+		<script data-main="js/app" src="js/require.js"></script>
+	</head>
+	<body>
+		<script type="text/template" id="wrapper-template">
+			<div class="wrapper">
+				<div class="wrap-form">
+					<ul class="item-list"></ul>
+					<div class="controls">
+						<input type="text" class="item-value">
+						<button class="item-add">Add</button>					
+					</div>
+				</div>				
+			</div>
+		</script>
+		<script type="text/template" id="list-template">
+			<form>
+			<% for (var i=0; i<data.length; ++i) { %>	
+					<li>
+						<input type="text" value="<%= data[i] %>" class="edit-list" disabled="disabled">						
+						<span data-value="<%= data[i] %>" class="item-edit">
+	                    <img class="icon icone-edit" src="img/edit.png"
+	                      width="25"  alt="edit" title="Edit item">
+	                    </span>
+	                    <span data-value="<%= data[i] %>" class="item-delete">
+	                    <img class="icon icone-delete" src="img/delete.png"
+	                      width="25" alt="delete"  title="Delete item">
+	                    </span>
+					</li>	
+			<% }; %>
+			</form>	
+		</script>
+	</body>
+	</html>
